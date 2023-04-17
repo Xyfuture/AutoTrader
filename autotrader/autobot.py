@@ -201,6 +201,10 @@ class AutoTraderBot:
             data_config, self._allow_dancing_bears, self._base_currency
         )
 
+        # fix bug in feed, stream only accept ccxt not ccxt:xxx
+        _feed = 'ccxt' if self._feed.split(':')[0].lower() == 'ccxt' else self._feed
+
+
         # Create instance of data stream object
         stream_attributes = {
             "data_filepaths": self._data_filepaths,
@@ -211,7 +215,7 @@ class AutoTraderBot:
             "data_start": self._data_start,
             "data_end": self._data_end,
             "instrument": self.instrument,
-            "feed": self._feed,
+            "feed": _feed,
             "portfolio": portfolio,
             "data_path_mapper": self._data_path_mapper,
             "data_dir": self._data_directory,
