@@ -9,7 +9,7 @@ run file. Here you import AutoTrader, configure the run settings and
 deploy your bot. This is all achieved in the example below.
 
 ```python
-# runfile.py
+# backtest.py
 from autotrader import AutoTrader
 
 at = AutoTrader()

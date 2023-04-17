@@ -212,7 +212,7 @@ deploy your bot. This is all achieved in the example below.
 
 
 ```python
-# runfile.py
+# backtest.py
 from autotrader import AutoTrader
 
 at = AutoTrader()
